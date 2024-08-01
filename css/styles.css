@@ -10,11 +10,18 @@ html {
   line-height: 1.75;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 3em 0 1em;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   color: #1d1d1d;
   margin-bottom: 2em;
   font-family: sans-serif;
