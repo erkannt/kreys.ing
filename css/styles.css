@@ -1,9 +1,22 @@
+:root {
+  --font--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --font--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+  --font-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --font-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+  --font-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+  --font-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+  --font-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+  --font-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+}
+
 body {
   margin: 0;
+  font-family: sans-serif;
+  margin-bottom: 10rem;
 }
 
 html {
-  font-size: 1.25em;
+  font-size: var(--font-0);
   line-height: 1.75;
 }
 
@@ -13,7 +26,26 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 3em 0 1em;
+  margin: 0 0 0.8em;
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  font-weight: 800;
+  line-height: 1.2;
+}
+h1 {
+  font-size: var(--font-4);
+}
+h2 {
+  font-size: var(--font-3);
+}
+h3 {
+  font-size: var(--font-2);
+}
+h4 {
+  font-size: var(--font-1);
+}
+h5,
+h6 {
+  font-size: var(--font-0);
 }
 
 p,
@@ -21,17 +53,23 @@ ul,
 ol {
   color: #1d1d1d;
   margin-bottom: 2em;
-  font-family: sans-serif;
 }
 
 img {
   max-width: 95%;
 }
 
+main {
+  margin: 0 auto;
+  max-width: 60ch;
+  padding: 0 1rem;
+}
+
 .hero {
   background-image: url("/neurons.png");
   width: 100vw;
   height: 60vh;
+  margin-bottom: 3rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -40,15 +78,18 @@ img {
   align-items: end;
 
   h1 {
+    font-size: var(--font-5);
     margin: 0;
     color: white;
-    padding: 3rem 0.5rem;
     width: 100%;
+    height: 30%;
+    padding-top: 2em;
     text-align: center;
     background-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 0.8) 60%,
       rgba(0, 0, 0, 0)
     );
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   }
 }
