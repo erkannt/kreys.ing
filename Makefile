@@ -11,7 +11,7 @@ watch-css:
 	find css/ | entr $(MAKE) static/styles.css
 
 .PHONY: release
-release: static/styles.css
+build: static/styles.css
 	zola build
 
 static/styles.css: css/styles.css
