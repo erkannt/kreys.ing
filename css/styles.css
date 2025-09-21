@@ -22,7 +22,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  margin-bottom: 10rem;
+  margin-bottom: var(--space-3xl);
 }
 
 html {
@@ -72,7 +72,11 @@ img {
 main {
   margin: 0 auto;
   max-width: 60ch;
-  padding: 0 1rem;
+  padding: 0 var(--space-s);
+}
+
+section {
+  margin-bottom: var(--space-3xl);
 }
 
 .hero {
@@ -80,7 +84,7 @@ main {
   background-image: url("/neurons.webp");
   width: 100vw;
   height: 60vh;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-2xl);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -102,5 +106,22 @@ main {
       rgba(0, 0, 0, 0)
     );
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.publications {
+  list-style: none;
+  padding-left: 0;
+
+  h3 {
+    font-size: var(--font-1);
+  }
+  li {
+    margin-bottom: var(--space-m);
+  }
+
+  p,
+  a {
+    margin-bottom: var(--space-2xs);
   }
 }
