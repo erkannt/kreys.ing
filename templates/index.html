@@ -44,12 +44,11 @@
 					uncover how mechanosensing regulates the electrical maturation of
 					neurons.
 				</p>
-				{% set science_widths = [400, 600, 800, 1200, 1553] %}
-				<picture>
-					<source type="image/webp" srcset="{% for width in science_widths %}{% set image = resize_image(path='kreysing_science.png', width=width, op='fit_width', format='webp', quality=80) %}{{ image.url }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(max-width: 640px) 95vw, 600px">
-					{% set science_fallback = resize_image(path='kreysing_science.png', width=800, op='fit_width', format='png') %}
-					<img src="{{ science_fallback.url }}" width="{{ science_fallback.width }}" height="{{ science_fallback.height }}" loading="lazy" decoding="async" alt="Three illustrations below the sentence: 'We develop new tools to study how processes at the cell interface regulate neuronal development.' First illustration shows a surface plasmon resonance microscope, second the cell membrane an internal structures interacting with the surrounding, third shows two neurons and an action potential.">
-				</picture>
+				<figure class="science" role="img" aria-label="Three illustrations below the sentence: 'We develop new tools to study how processes at the cell interface regulate neuronal development.' First illustration shows a surface plasmon resonance microscope, second the cell membrane an internal structures interacting with the surrounding, third shows two neurons and an action potential.">
+					<img src="/kreysing_science_a.svg" width="716" height="690" loading="lazy" decoding="async" alt="">
+					<img src="/kreysing_science_b.svg" width="936" height="690" loading="lazy" decoding="async" alt="">
+					<img src="/kreysing_science_c.svg" width="1330" height="690" loading="lazy" decoding="async" alt="">
+				</figure>
 				<p>
 					My <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/">lab</a>
 					is based at the
