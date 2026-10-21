@@ -15,6 +15,15 @@
 
 <body>
   <div class="hero">
+    {% set hero_widths = [480, 768, 1080, 1440, 1920, 2560, 3200] %}
+    <picture>
+      <source type="image/webp"
+        srcset="{% for width in hero_widths %}{% set image = resize_image(path='neurons.webp', width=width, op='fit_width', format='webp', quality=80) %}{{ image.url }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+        sizes="100vw">
+      {% set hero_fallback = resize_image(path='neurons.webp', width=1440, op='fit_width', format='jpg', quality=80) %}
+      <img src="{{ hero_fallback.url }}" width="{{ hero_fallback.width }}" height="{{ hero_fallback.height }}" alt=""
+        fetchpriority="high">
+    </picture>
     <h1>Eva Kreysing Lab</h1>
   </div>
   <main>
@@ -36,8 +45,16 @@
         uncover how mechanosensing regulates the electrical maturation of
         neurons.
       </p>
-      <img src="/kreysing_science.png"
-        alt="Three illustrations below the sentence: 'We develop new tools to study how processes at the cell interface regulate neuronal development.' First illustration shows a surface plasmon resonance microscope, second the cell membrane an internal structures interacting with the surrounding, third shows two neurons and an action potential.">
+      {% set science_widths = [400, 600, 800, 1200, 1553] %}
+      <picture>
+        <source type="image/webp"
+          srcset="{% for width in science_widths %}{% set image = resize_image(path='kreysing_science.png', width=width, op='fit_width', format='webp', quality=80) %}{{ image.url }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+          sizes="(max-width: 640px) 95vw, 600px">
+        {% set science_fallback = resize_image(path='kreysing_science.png', width=800, op='fit_width', format='png') %}
+        <img src="{{ science_fallback.url }}" width="{{ science_fallback.width }}" height="{{ science_fallback.height }}"
+          loading="lazy" decoding="async"
+          alt="Three illustrations below the sentence: 'We develop new tools to study how processes at the cell interface regulate neuronal development.' First illustration shows a surface plasmon resonance microscope, second the cell membrane an internal structures interacting with the surrounding, third shows two neurons and an action potential.">
+      </picture>
       <p>
         My <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/">lab</a>
         is based at the
