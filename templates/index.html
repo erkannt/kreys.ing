@@ -11,11 +11,13 @@
 		<meta property="og:title" content="Eva Kreysing Lab">
 		<meta property="og:url" content="https://kreys.ing">
 		<meta name="theme-color" content="#fafafa">
+
+		{% set hero_widths = [480, 768, 1080, 1440, 1920, 2560, 3200] %}
+		<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesizes="100vw" imagesrcset="{% for width in hero_widths %}{% set image = resize_image(path='neurons.webp', width=width, op='fit_width', format='webp', quality=80) %}{{ image.url }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}">
 	</head>
 
 	<body>
 		<div class="hero">
-			{% set hero_widths = [480, 768, 1080, 1440, 1920, 2560, 3200] %}
 			<picture>
 				<source type="image/webp" srcset="{% for width in hero_widths %}{% set image = resize_image(path='neurons.webp', width=width, op='fit_width', format='webp', quality=80) %}{{ image.url }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="100vw">
 				{% set hero_fallback = resize_image(path='neurons.webp', width=1440, op='fit_width', format='jpg', quality=80) %}

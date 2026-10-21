@@ -86,7 +86,13 @@ section {
 }
 
 .hero {
-  background-color: teal;
+  /* Inline 32px WebP placeholder generated from static/neurons.webp.
+     Regenerate with:
+     magick static/neurons.webp -resize 32x -quality 40 webp:- | base64 -w0 */
+  background-color: #021321;
+  background-image: url("data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAADQBQCdASogABwAPu1gqlAppSOisBgIATAdiWgRQANBArqTA4ldSFOz+fJaMGYCNeDcW4cqMNYAAP73qbO+dVME6+smgUhePAs2AKRlI/cTIsdIGf7ZONuHq1juWBwzEvLZug5Uoqyu+y63PXyatyIUC/+paoNDToD1T0uUQj3hFhJ0r9J1DnvAKypOxhDYseVlWZ4Smf+y087wTRH8opsZsDfc/sYTppyNUza24Fn7xno6gJwTMJyl5eqZmSY9DrJWDB48neoQyDoOnNhpd2gTZnoWhce48K8582smQkN/vMD57mqyjPRhiovcBGmr0LFGybtesKQQfhgA");
+  background-position: center;
+  background-size: cover;
   width: 100vw;
   height: 60vh;
   margin-bottom: var(--space-2xl);
