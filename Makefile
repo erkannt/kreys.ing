@@ -15,5 +15,5 @@ build: static/styles.css
 	zola build
 
 static/styles.css: css/styles.css
-	bunx lightningcss-cli --minify --targets '>= 0.25%' $^ -o $@
+	mise exec -- lightningcss --minify --targets '>= 0.25%' $^ -o $@
 
